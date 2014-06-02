@@ -1,0 +1,30 @@
+{
+  "name": "ToDoTrot",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "csbrandt <cs.brandt@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Ink": "~3.0.2",
+    "InkJS": "~3.0.2",
+    "ember-localstorage-adapter": "~0.2.0",
+    "jquery-timeago": "~1.4.1",
+    "require-ember-handlebars-plugin": "~0.1.2",
+    "requirejs-text": "~2.0.12",
+    "requirejs": "~2.1.13",
+    "masonry": "~3.1.5"
+  }
+}

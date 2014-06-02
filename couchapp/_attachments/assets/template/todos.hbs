@@ -1,0 +1,38 @@
+<div class="ink-grid content">
+   <div class="column-group">
+      <div id="content" class="small-100 medium-100 large-75 xlarge-75">
+         <nav class="ink-navigation">
+            <ul class="pagination pills black">
+               <!-- names come from resource.route in router -->
+               <li class="active pill">{{#link-to 'todos.index'}}All{{/link-to}}</li>
+               <li class="pill">{{#link-to 'todos.active'}}Active{{/link-to}}</li>
+               <li class="pill">{{#link-to 'todos.complete'}}Complete{{/link-to}}</li>
+            </ul>
+         </nav>
+         <form class="ink-form" onsubmit="return false;">
+            <div class="control-group">
+               <div class="control prepend-button append-button">
+                  <button class="ink-button"><i class="fa fa-search fa-lg"></i>
+                  </button>
+                  <span>
+                     {{input id="todo_input" type="text" value=todoText action="create" placeholder="Add or search todos"}}
+                  </span>
+                  <button class="ink-button">Add</button>
+               </div>
+            </div>
+         </form>
+         <ul class="column-group horizontal-gutters list-view-list">
+            {{#each todos itemController="todo"}}
+            <div {{bind-attr class="complete:complete :small-100 :medium-50 :large-33 :xlarge-25 :masonry-item" }}>
+               <li class="clearfix" id="">
+                  <small>Added {{timeago model.addedDate}}</small>
+                  <p>{{model.content}}</p>
+                  <i {{action "completeTodo" model}} class="fa fa-check-circle-o fa-3x"></i>
+               </li>
+            </div>
+            {{/each}}
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="push"></div>
